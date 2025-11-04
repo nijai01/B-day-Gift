@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🎉 Happy Birthday, Frndy Sissy 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ---------------- GLOBAL STYLE ---------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow-x: hidden; }
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top left, #ff9ac4, #ffd6a5, #a0e7e5);
+  background-size: 300% 300%;
+  animation: bgMove 10s ease infinite;
+  overflow-x: hidden;
+}
+@keyframes bgMove {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  flex-wrap: wrap;
+}
+header h1 {
+  font-size: 2.2rem;
+  text-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+nav a {
+  margin: 0.3rem 0.6rem;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  font-size: 1.2rem;
+}
+nav a::after {
+  content: "";
+  position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: #fff; transition: 0.3s;
+}
+nav a:hover::after, nav a.active::after { width: 100%; }
+
+/* ---------------- SECTIONS ---------------- */
+section {
+  display: none;
+  padding: 0 1.2rem 3rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+  min-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+
+section.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+p {
+  max-width: 700px;
+  margin: 1rem auto;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.btn {
+  background: linear-gradient(45deg, #ff69b4, #ff4081);
+  border: none;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0.4rem;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-size: 1rem;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* ---------------- IMAGES GRID ---------------- */
+.memories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.memories-grid img {
+  width: 200px; height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.4s;
+}
+.memories-grid img:hover { transform: scale(1.08) rotate(2deg); }
+
+/* ---------------- VIDEO SECTION ---------------- */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.video-wrapper video {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  border: 3px solid rgba(255,255,255,0.4);
+}
+.locked {
+  filter: blur(8px);
+  pointer-events: none;
+}
+.hidden { display: none; }
+
+/* ---------------- QUIZ SECTION (inside video) ---------------- */
+.quiz-box {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  color: #fff;
+}
+.quiz-box button {
+  background: #ff8ac9;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 8px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.quiz-box button:hover { background: #ff64b2; }
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------------- RESPONSIVE DESIGN ---------------- */
+
+/* General mobile adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0.4rem 0.8rem;
+  }
+
+  section {
+    padding: 0.8rem 0.8rem 2.5rem;
+    min-height: auto;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    border-radius: 20px;
+  }
+
+  .memories-grid img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .quiz-box {
+    width: 90%;
+    margin: 1.5rem auto;
+    padding: 15px;
+  }
+
+  .video-wrapper video {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Extra small screens (like older phones) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .memories-grid {
+    gap: 0.6rem;
+  }
+
+  .memories-grid img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .quiz-box {
+    font-size: 0.95rem;
+  }
+
+  footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+}
+}
+
+/* Large screen optimization */
+@media (min-width: 1200px) {
+  header h1 {
+    font-size: clamp(2rem, 2.5vw, 3rem);
+  }
+
+  section h2 {
+    font-size: clamp(1.8rem, 2vw, 2.4rem);
+  }
+
+  p {
+    font-size: clamp(1rem, 1.1vw, 1.3rem);
+  }
+}
+
+
+
+
+
+  /* 🖼️ Grid styling */
+   #memories {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 900px;
+  }
+
+  #memories h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  #memories p {
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  /* 🖼️ Grid layout */
+  .memories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centers images horizontally */
+    gap: 20px; /* spacing between images */
+  }
+
+  .memories-grid img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .memories-grid img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* 🌟 Lightbox overlay */
+  #lightbox {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+  }
+
+  #lightbox.hidden {
+    display: none;
+  }
+
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  #close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  #close:hover {
+    color: #ffaaaa;
+  }
+
+
+
+
+
+</style>
+</head>
+
+<body>
+<header>
+  <h1>🎂 Happy Birthday, Frndy Sissy 💕</h1>
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#memories">Memories</a>
+    <a href="#wishes">Wishes</a>
+    <a href="#video">Video</a>
+  </nav>
+</header>
+
+<audio id="bg-music" autoplay loop muted>
+  <source src="perfect.mp3" type="audio/mpeg" />
+</audio>
+
+<canvas id="confetti-canvas"></canvas>
+
+<section id="home" class="active">
+  <h2>Hey Hello 💖</h2>
+  <p>Another year, another hundred memories. You mean the world to me — enjoy your special day! Let’s fill it with sparkles, music, and laughter 🎶✨</p>
+  <!-- <button id="confettiToggle" class="btn">Celebrate 🎉</button> -->
+  <!-- <button id="unmuteBtn" class="btn">Unmute Music 🔊</button> -->
+</section>
+
+<section id="memories">
+  <h2>The Sweet Memories 📸</h2>
+  <p>Some snapshots of our happiest and silliest moments together — every one of them is priceless 💫</p>
+<center>
+  <div class="memories-grid">
+    <img src="C:\Users\nijai\OneDrive\Documents\birthday-site\KuttyNishi.jpg" alt="Memory 1">
+    <img src="C:\Users\nijai\OneDrive\Documents\birthday-site\FrndyySissy.jpg" alt="Memory 2">
+    <img src="C:\Users\nijai\OneDrive\Documents\birthday-site\SareeImage.jpg" alt="Memory 3">
+    <img src="C:\Users\nijai\OneDrive\Documents\birthday-site\Videocall.jpg" alt="Memory 4">
+    <img src="C:\Users\nijai\OneDrive\Documents\birthday-site\ChennaiBestImage.jpg" alt="Memory 5">
+  </div>
+  </center>
+</section>
+
+
+<!-- Lightbox overlay -->
+<div id="lightbox" class="hidden">
+  <span id="close">&times;</span>
+  <img id="lightbox-img" src="" alt="Focused memory">
+</div>
+
+<section id="wishes">
+  <h2>💖 My Birthday Wish 💖</h2>
+  <p>Dear Frndy Sissy,<br><br>
+      You fill every room with laughter, every heart with joy, and every day with warmth.
+On your birthday, I just want you to know — you’re irreplaceable and loved endlessly 💕
+You’ve been my constant sunshine through cloudy days, my partner in all the silliness, and my comfort in chaos.
+I’m so grateful for every memory, every giggle, and every late-night talk we’ve shared.
+Cheers to many more crazy adventures, inside jokes, and unshakable moments of pure friendship! 🎂✨
+Love you to the moon and back 🌙💖</p>
+</section>
+
+<section id="video">
+  <h2>🎬 Unlock Your Surprise Video 💝</h2>
+  <p>Answer this quick friendship quiz to unlock your special video gift 🎁</p>
+
+  <!-- QUIZ -->
+  <div id="quiz-container" class="quiz-box">
+    <p id="question">Loading question...</p>
+    <div id="options"></div>
+    <p id="score">Score: 0</p>
+  </div>
+
+  <!-- VIDEO (LOCKED INITIALLY) -->
+  <div class="video-wrapper">
+    <video id="birthdayVideo" class="locked" controls muted playsinline>
+      <source src="VNnew.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<footer>
+  <p>Made with 💖 by Nijazz — press "C" for confetti!</p>
+</footer>
+
+<script>
+
+
+
+
+
+
+
+
+const images = document.querySelectorAll('.memories-grid img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const close = document.getElementById('close');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.classList.remove('hidden');
+      lightboxImg.src = img.src;
+    });
+  });
+
+  close.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+  });
+
+  // Close when clicking outside the image
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.add('hidden');
+    }
+  });
+
+
+
+
+
+
+
+/* ----------- PAGE NAVIGATION ----------- */
+const navLinks=document.querySelectorAll("nav a");
+const sections=document.querySelectorAll("section");
+navLinks.forEach(link=>{
+  link.addEventListener("click",e=>{
+    e.preventDefault();
+    const id=link.getAttribute("href").substring(1);
+    sections.forEach(s=>s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    navLinks.forEach(l=>l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+/* ----------- QUIZ LOGIC TO UNLOCK VIDEO ----------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const questions = [
+    { q: "Who’s more likely to laugh in serious moments?", opts: ["You", "Me", "Both", "None"], ans: "None" },
+    { q: "Can you guess how many years we’ve been friends — and the exact day our friendship began?", opts: ["3 years — March 5, 2022 🌸", "4 years — January 12, 2021 💫", "6 years — November 10, 2019 💖", "More than 10 years"], ans: "More than 10 years" },
+    { q: "Mention your gender based on the previous talk with me?", opts: ["Female", "Male", "Other"], ans: "Male" },
+    { q: "Who forgets birthdays more often?", opts: ["You", "Me", "Neither"], ans: "You" },
+    { q: "If we were in a movie, what genre would it be?", opts: ["Comedy", "Romantic Drama", "Adventure", "Horror"], ans: "Horror" },
+    { q: "What’s our key song?", opts: ["Perfect 💞", "Happy 🎶", "Faded", "Julia Michaels"], ans: "Julia Michaels" },
+    { q: "The time period we played pepelo?", opts: ["25 days", "30 days", "45 days", "50 days"], ans: "45 days"}
+  ];
+
+  let current = 0, score = 0;
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
+  const scoreEl = document.getElementById("score");
+  const video = document.getElementById("birthdayVideo");
+
+  function showQuestion() {
+    const q = questions[current];
+    questionEl.textContent = q.q;
+    optionsEl.innerHTML = "";
+    q.opts.forEach(opt => {
+      const btn = document.createElement("button");
+      btn.textContent = opt;
+      btn.onclick = () => checkAnswer(opt);
+      optionsEl.appendChild(btn);
+    });
+  }
+
+  function checkAnswer(selected) {
+    if (selected === questions[current].ans) score++;
+    scoreEl.textContent = `Score: ${score}`;
+    current++;
+    if (current < questions.length) showQuestion();
+    else endGame();
+  }
+
+  function endGame() {
+    if (score >= 6) {
+      questionEl.textContent = "🎉 You did it! Video unlocked 🎥";
+      optionsEl.innerHTML = "";
+      scoreEl.textContent = `Final Score: ${score}/7`;
+
+      // Unlock & play video
+      video.classList.remove("locked");
+      video.muted = false;
+      video.play();
+
+      // Confetti celebration
+      const confettiBtn = document.getElementById("confettiToggle");
+      if (confettiBtn) confettiBtn.click();
+    } else {
+      questionEl.textContent = `😅 You scored ${score}/6 — try again to unlock the video!`;
+      optionsEl.innerHTML = `<button id="retryBtn">🔁 Retry</button>`;
+      document.getElementById("retryBtn").onclick = restartGame;
+    }
+  }
+
+  function restartGame() {
+    score = 0; current = 0;
+    scoreEl.textContent = "Score: 0";
+    showQuestion();
+  }
+
+  showQuestion();
+});
+</script>
+</body>
+</html>
